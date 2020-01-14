@@ -87,8 +87,6 @@ int root(int** pChessBoard, int nDim, int moveNo, int x, int y, Point* pHorseMov
 	int moveIndex = 0;
 	while( moveIndex < HORSE_MOVES )
 	{
-	//	newX = x + pHorseMoves[moveIndex].x;
-	//	newY = y + pHorseMoves[moveIndex].y;
 		if( move(pChessBoard, nDim, moveIndex, x, y, &newX, &newY, pHorseMoves) == 1 )
 		{
 			int rootReturn = root(pChessBoard, nDim, moveNo + 1, newX, newY, pHorseMoves);
@@ -123,15 +121,6 @@ void printChessBoard(int** pChessBoard, int nDim)
 			printf("%d ", pChessBoard[i][j]);
 		printf("\n");
 	}
-	/*
-	while(pChessBoard)
-	{
-		for(int j = 0; j < nDim; j++)
-			printf("%d ", (*pChessBoard)[j]);
-		printf("\n");
-		pChessBoard++;
-	}
-	*/
 }
 
 void freeChessboard(int*** pChessBoard)
